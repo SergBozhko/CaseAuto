@@ -1,0 +1,382 @@
+// bower:scss
+// endbower
+
+/* Vars */
+$mainColor: #fefefe;
+$aboutColor: #527d86;
+
+@mixin tOpacity {
+  -webkit-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+@mixin easeOpacity {
+  -webkit-transition: opacity .2s ease;
+  -o-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+}
+@mixin transitionAll {
+  -webkit-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;
+}
+@mixin grayscale {
+  @include transitionAll;  
+
+  -webkit-filter: grayscale(80%);
+  -o-filter: grayscale(80%);
+  filter: grayscale(80%);
+
+  &:hover {
+    -webkit-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    filter: grayscale(05);
+  }
+}
+@mixin beforeCenter {
+  &:before {
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    margin-left: -4px;
+  }
+}
+/* End Vars */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #000;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $mainColor;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+h3 {
+  font-size: 14px;
+  font-family: "PT Sans", sans-serif;
+  color: $mainColor;
+  font-weight: 300;
+}
+
+a {
+  color: $mainColor;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 14px;
+  opacity: 1;
+  @include tOpacity;
+}
+/*-------------------------------------------------------------------*/
+
+#main-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 270px;  
+  text-align: center;
+
+  @include beforeCenter;
+}
+.block-wrap {
+  width: 100%;
+}
+.block-area {
+  width: 1220px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.header-main-img {
+  background: url(../images/header-bg.jpeg) no-repeat center;
+  background-size: cover;
+}
+.header-w-img {
+  background: #000;
+  background: -webkit-radial-gradient(center, circle cover, #3E3E3E 0,#000000 100%);
+  background: -o-radial-gradient(center, circle cover, #3E3E3E 0,#000000 100%);
+  background: -ms-radial-gradient(center, circle cover, #3E3E3E 0,#000000 100%);
+  background: -moz-radial-gradient(center, circle cover, #3E3E3E 0,#000000 100%);
+  background: radial-gradient(center, circle cover, #3E3E3E 0,#000000 100%);
+}
+.content {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 270px;
+  width: calc(100% - 270px);  
+}
+.over-auto {
+  overflow: auto;
+}
+
+.header-content {
+  display: inline-block;
+  vertical-align: middle;
+}
+.logo-img {
+  @include easeOpacity;
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+.logo-title {
+  padding-bottom: 5px;
+  border-bottom: 2px solid $mainColor;
+}
+#main-nav {
+  margin-top: 90px;
+}
+.nav-list {
+  li {
+    margin-bottom: 38px;
+  }
+  li a:hover {
+    opacity: 0.7;
+  }
+}
+
+/* === Gallery === */
+.gallery-item {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: absolute;  
+
+  @include grayscale;
+}
+.g-item-1 {
+  top: 0;
+  left: 0;
+  height: 50%;
+  width: 10%;
+  background-image: url(../images/g-item-1.jpg);
+}
+.g-item-2 {
+  top: 0;
+  left: 10%;
+  height: 50%;
+  width: 40%;
+  background-image: url(../images/g-item-2.jpg);
+}
+.g-item-3 {
+  top: 0;
+  left: 50%;
+  height: 50%;
+  width: 10%;
+  background-image: url(../images/g-item-3.jpg);
+}
+.g-item-4 {
+  top: 0;
+  left: 60%;
+  height: 75%;
+  width: 40%;
+  background-image: url(../images/g-item-4.jpg);
+}
+.g-item-5 {
+  top: 50%;
+  left: 0;
+  height: 25%;
+  width: 25%;
+  background-image: url(../images/g-item-5.jpg);
+}
+.g-item-6 {
+  top: 75%;
+  left: 0;
+  height: 25%;
+  width: 12.5%;
+  background-image: url(../images/g-item-6.jpg);
+}
+.g-item-7 {
+  top: 75%;
+  left: 12.5%;
+  height: 25%;
+  width: 12.5%;
+  background-image: url(../images/g-item-7.jpg);
+}
+.g-item-8 {
+  top: 50%;
+  left: 25%;
+  height: 50%;
+  width: 10%;
+  background-image: url(../images/g-item-8.jpg);
+}
+.g-item-9 {
+  top: 50%;
+  left: 35%;
+  height: 50%;
+  width: 25%;
+  background-image: url(../images/g-item-9.jpg);
+}
+.g-item-10 {
+  top: 75%;
+  left: 60%;
+  height: 25%;
+  width: 20%;
+  background-image: url(../images/g-item-10.jpg);
+}
+.g-item-11 {
+  top: 75%;
+  left: 80%;
+  height: 25%;
+  width: 20%;
+  background-image: url(../images/g-item-11.jpg);
+}
+
+/* === Cases === */
+.case-item-content {
+  display: inline-block;
+  vertical-align: middle;
+  opacity: 1;
+
+  @include easeOpacity;
+
+  img {
+    display: block;
+  }
+  .auto-enter {
+    margin: 130px auto 0 auto;
+  }
+}
+
+.case-item {
+  position: absolute;
+  width: 33.3333%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  text-align: center;
+
+  @include grayscale;
+
+  @include beforeCenter;
+
+  &:hover .case-item-content {
+    opacity: 0.8;
+  };
+}
+.c-item-1 {
+  background-image: url(../images/c-item-1.jpg);
+  left: 0;
+}
+.c-item-2 {
+  background-image: url(../images/c-item-2.jpg);
+  left: 33.3333%;
+}
+.c-item-3 {
+  background-image: url(../images/c-item-3.jpg);
+  left: 66.6666%;
+}
+
+/* === About === */
+.about-bg {
+  background: url(../images/about-bg.jpg) no-repeat center;
+  background-size: cover;
+}
+.about-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  @include beforeCenter;
+}
+.about-content-wrap {
+  display: inline-block;
+  vertical-align: middle;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eaeaea+0,ffffff+33,ffffff+100 */
+  background: #eaeaea; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZWFlYWVhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMzMlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(45deg,  #eaeaea 0%, #ffffff 33%, #ffffff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#eaeaea), color-stop(33%,#ffffff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(45deg,  #eaeaea 0%,#ffffff 33%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(45deg,  #eaeaea 0%,#ffffff 33%,#ffffff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(45deg,  #eaeaea 0%,#ffffff 33%,#ffffff 100%); /* IE10+ */
+  background: linear-gradient(45deg,  #eaeaea 0%,#ffffff 33%,#ffffff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#ffffff',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+  width: 720px;
+  height: 550px;
+  padding-right: 60px;
+}
+.about-title {
+  color: #010101;
+  font-size: 32px;
+  font-weight: 400;
+  padding: 60px 0 0 100px;
+}
+.about-text {
+  margin-top: 2px;
+  border-top: 2px solid $aboutColor;
+  padding: 30px 20px 30px 76px;
+
+  p {
+    color: #000;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  p:first-child {
+    margin-top: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+.about-bold {
+  color: $aboutColor;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.about-footer {
+  color: #2f2f2f;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 25px 50px 25px 78px;
+  border: 1px solid $aboutColor;
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.about-phones {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 170px;
+  width: 596px;
+}
+
+/* === Advantages === */
+.block-ours-adv {
+  background-color: #fefcf4;
+  padding: 100px 0 0 0;
+}
+.block-title {
+  color: #424242;
+  font-weight: 700;
+  font-size: 36px;
+  text-transform: uppercase;
+  text-align: center;
+}
