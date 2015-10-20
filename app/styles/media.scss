@@ -1,2 +1,194 @@
 // bower:scss
 // endbower
+
+@media only screen and (max-width: 1790px),
+only screen and (max-device-width: 1790px) {
+	/* About */
+	.about-byyd-text p {
+		font-size: 19px;
+	}
+	
+}
+
+@media only screen and (max-width: 1620px),
+only screen and (max-device-width: 1620px) {
+	/* About */
+	.about-byyd-text p {
+		font-size: 18px;
+	}	
+}
+@media only screen and (max-width: 1460px),
+only screen and (max-device-width: 1460px) {
+	/* About */
+	.about-byyd-text p {
+		font-size: 17px;
+	}
+	.about-footer {
+		font-size: 17px;
+	}
+}
+@media only screen and (max-width: 1400px),
+only screen and (max-device-width: 1400px) {
+	/* About */
+	.about-byyd-text p span {
+		font-size: 80px;
+	}	
+}
+@media only screen and (max-width: 1300px),
+only screen and (max-device-width: 1300px) {
+	/* About */
+	.about-byyd-text p {
+		font-size: 16px;
+		padding-left: 50px;
+	}
+	.about-footer {
+		font-size: 16px;
+	}
+}
+@media only screen and (max-width: 1190px),
+only screen and (max-device-width: 1190px) {
+	/* About */
+	.about-byyd-text p {
+		font-size: 15px;
+		padding-left: 40px;
+	}
+	.about-footer {
+		font-size: 15px;
+	}
+}
+@media only screen and (max-width: 1100px),
+only screen and (max-device-width: 1100px) {
+	/* About */
+	.about-text {
+	    padding: 0 0 12px 0;
+	}
+	.about-main-byyd {
+		position: static;
+		margin: 20px auto 40px auto;
+		display: block;
+		width: 86%;
+	}
+	.about-byyd-text {
+		float: none;
+		width: 100%;
+		padding: 0 20px 0 60px;
+	}
+	.about-footer {
+		width: 100%;
+		text-align: left;
+	}
+	.about-byyd-text p {
+		padding-left: 20px;
+	}
+	.about-byyd-text p span {
+		font-size: 35px;
+	}
+
+	/* Advantages */
+	.block-info-text {
+		width: 70%;
+		font-size: 24px;
+	}
+}
+
+/* Mobile Version */
+@media only screen and (max-width: 900px),
+only screen and (max-device-width: 900px) {
+	#main-header {
+		left: -270px;
+	}
+	.main-menu-mobile {
+		top: 0;
+	}
+	.content, .content-landing {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	/* Advantages */
+	.bonuns-phones, .bonus-shadow {
+		display: none;
+	}
+	.block-info-text {
+		font-size: 24px;
+	}
+	.block-info-adv {
+	    padding: 140px 0;
+	}
+	.block-title {
+		font-size: 18px;
+	}
+	.block-some-text-middle {
+		font-size: 16px;
+	}
+	.bonus-title {
+		font-size: 20px;
+		padding-left: 0;
+		text-align: center;
+	}
+	.bonus-spot {
+		text-align: center;
+	}
+	.bonus-list {
+		padding-bottom: 0;
+	}
+	.bonus-list div {
+		max-width: 426px;
+    	width: 100%;
+    	font-size: 15px;
+    	height: 100px;
+	}
+	.bonus-shadow {
+	    margin-left: -191px;
+	    left: 50%;
+	    max-width: 90%;
+	}
+	.bonus-list li {
+	    margin-bottom: 20px;
+	}
+	.bonus-green {
+	    padding: 34px 53px;
+	}
+	.bonus-red {
+	    padding: 40px 25px;
+	}
+	.bonus-blue {
+	    padding: 28px 38px;
+	}
+	.bonus-pink {
+		padding: 26px 40px;
+	}
+
+	/* Cases */
+	.content.cases-content {
+		padding: 0;
+	}
+	.case-item {
+		width: 100%;
+		padding: 100px 0;
+		position: static;
+	}
+}
+
+@media only screen and (max-width: 736px),
+only screen and (max-device-width: 736px) {
+	.content {
+	    padding: 14% 0 40px 0;
+	}
+}
+
+@media only screen and (max-width: 508px),
+only screen and (max-device-width: 508px) {
+	.about-byyd-text p span {
+		font-size: 52px;
+		left: -28px;
+	}
+}
+
+@media only screen and (max-width: 400px),
+only screen and (max-device-width: 400px) {
+	.about-byyd-text p span {
+		font-size: 72px;
+		left: -38px;
+	}
+}

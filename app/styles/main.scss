@@ -27,6 +27,13 @@ $cForm: #fff;
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
+@mixin transEaseAll {
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
+}
 @mixin grayscale {
   @include transitionAll;  
 
@@ -108,9 +115,88 @@ a {
   bottom: 0;
   width: 270px;  
   text-align: center;
+  overflow: auto;
 
   @include beforeCenter;
 }
+
+/* Mobile menu*/
+.main-menu-mobile {
+  position: fixed;
+  top: -40px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  text-align: center;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.35);
+}
+.mobile-logo-img {
+  display: inline-block;
+  margin: 4px auto;
+  height: 32px;
+}
+.mobile-menu-lines {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 34px;
+  padding: 4px 0px 5px 0;
+
+  li {
+    background-color: #fff;
+    margin: 5px 2px;
+    height: 4px;
+    border-radius: 2px;
+  }
+}
+.mobile-navigation-modal {
+  position: fixed;
+  left: -300px;
+  border-top: 1px solid #fff;
+  top: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  z-index: 1000;
+  
+  @include transEaseAll;
+}
+.mobile-navigation-modal-active {
+  left: 0 !important;
+}
+.mobile-menu-overlay-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  @include easeOpacity;
+}
+.mobile-modal-list {
+  li {
+    text-transform: uppercase;
+    border-bottom: 1px solid #fff;
+
+    a {
+      display: block;
+      width: 100%;
+      padding: 20px 5px 20px 20px;
+    }
+  }
+}
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 900;
+  opacity: 0;
+  visibility: hidden;
+}
+/* = = = */
+
 .block-wrap {
   width: 100%;
   position: relative;
@@ -134,13 +220,12 @@ a {
   background: radial-gradient(center, circle cover, #3E3E3E 0,#000000 100%);
 }
 .content {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  left: 270px;
+  margin-left: 270px;
+  position: relative;
   width: calc(100% - 270px);
-  height: 100%;  
+  min-height: 100%;
+  height: auto;
+  padding: 10% 0 40px 0;
 }
 .content-landing {
     width: calc(100% - 270px);
@@ -189,26 +274,13 @@ a {
 
   @include grayscale;
 }
-.g-item-1 {
+.g-item-2 {
   top: 0;
   left: 0;
   height: 50%;
-  width: 10%;
-  background-image: url(../images/g-item-1.jpg);
-}
-.g-item-2 {
-  top: 0;
-  left: 10%;
-  height: 50%;
-  width: 40%;
+  width: 60%;
   background-image: url(../images/g-item-2.jpg);
-}
-.g-item-3 {
-  top: 0;
-  left: 50%;
-  height: 50%;
-  width: 10%;
-  background-image: url(../images/g-item-3.jpg);
+  background-position: right;
 }
 .g-item-4 {
   top: 0;
@@ -228,42 +300,21 @@ a {
   top: 75%;
   left: 0;
   height: 25%;
-  width: 12.5%;
+  width: 25%;
   background-image: url(../images/g-item-6.jpg);
-}
-.g-item-7 {
-  top: 75%;
-  left: 12.5%;
-  height: 25%;
-  width: 12.5%;
-  background-image: url(../images/g-item-7.jpg);
-}
-.g-item-8 {
-  top: 50%;
-  left: 25%;
-  height: 50%;
-  width: 10%;
-  background-image: url(../images/g-item-8.jpg);
 }
 .g-item-9 {
   top: 50%;
-  left: 35%;
+  left: 25%;
   height: 50%;
-  width: 25%;
+  width: 35%;
   background-image: url(../images/g-item-9.jpg);
-}
-.g-item-10 {
-  top: 75%;
-  left: 60%;
-  height: 25%;
-  width: 20%;
-  background-image: url(../images/g-item-10.jpg);
 }
 .g-item-11 {
   top: 75%;
-  left: 80%;
+  left: 60%;
   height: 25%;
-  width: 20%;
+  width: 40%;
   background-image: url(../images/g-item-11.jpg);
 }
 
@@ -321,67 +372,83 @@ a {
   background-size: cover;
 }
 .about-wrap {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-
-  @include beforeCenter;
+  text-align: center;
 }
 .about-content-wrap {
   display: inline-block;
   vertical-align: middle;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eaeaea+0,ffffff+33,ffffff+100 */
-  background: #eaeaea; /* Old browsers */
-  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZWFlYWVhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMzMlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-  background: -moz-linear-gradient(45deg,  #eaeaea 0%, #ffffff 33%, #ffffff 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#eaeaea), color-stop(33%,#ffffff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(45deg,  #eaeaea 0%,#ffffff 33%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(45deg,  #eaeaea 0%,#ffffff 33%,#ffffff 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(45deg,  #eaeaea 0%,#ffffff 33%,#ffffff 100%); /* IE10+ */
-  background: linear-gradient(45deg,  #eaeaea 0%,#ffffff 33%,#ffffff 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#ffffff',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
-  width: 720px;
-  height: 550px;
-  padding-right: 60px;
+  width: 90%;
 }
 .about-title {
-  color: #010101;
-  font-size: 32px;
+  color: #fff;
+  font-size: 30px;
   font-weight: 400;
-  padding: 60px 0 0 100px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
 }
 .about-text {
-  margin-top: 2px;
-  border-top: 2px solid $aboutColor;
-  padding: 30px 20px 30px 76px;
+  border: 2px solid #fff;
+  border-right: transparent;
+  border-left: transparent;
+  padding: 60px 0 60px 60px;
+  color: #fff;
+  text-align: left;
+  position: relative;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100 */
+  background: rgba(0, 0, 0, 0.1); /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(left,  rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0, 0, 0, 0.5)), color-stop(100%,rgba(0, 0, 0, 0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0) 100%); /* IE10+ */
+  background: linear-gradient(to right,  rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 ); /* IE6-8 */
+}
+.about-main-byyd {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 55%;
+}
+.about-byyd-text {
+  float: left;
+  width: 28%;
 
   p {
-    color: #000;
-    font-size: 18px;
-    font-weight: 300;
-  }
-  p:first-child {
-    margin-top: 0;
-  }
-  p:last-child {
-    margin-bottom: 0;
+    text-shadow: 0 0 7px #000;
+    color: #fff;
+    font-size: 20px;
+    padding-left: 60px;
+    position: relative;
+
+    span {
+      position: absolute;
+      left: -20px;
+      font-size: 90px;
+    }
   }
 }
 .about-bold {
-  color: $aboutColor;
-  font-size: 20px;
-  font-weight: 700;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 400;
   text-transform: uppercase;
 }
 .about-footer {
-  color: #2f2f2f;
-  font-size: 20px;
-  font-weight: 400;
-  padding: 25px 50px 25px 78px;
-  border: 1px solid $aboutColor;
-  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: right;
+  text-shadow: 0 0 7px #000;
+  width: 55%;
+  float: right;
+  margin-top: 24px;
 }
 .about-phones {
   position: absolute;
@@ -394,7 +461,7 @@ a {
 /* === Advantages === */
 .block-ours-adv {
   background-color: #fefcf4;
-  padding: 100px 0 20px 0;
+  padding: 100px 0 60px 0;
 }
 .block-title {
   color: #424242;
@@ -412,6 +479,7 @@ a {
 .ours-adv-img {
   margin: 0 auto;
   display: block;
+  max-width: 90%;
 }
 .block-info-adv {
   background: url(../images/infoblock.jpg) no-repeat center;
@@ -421,7 +489,7 @@ a {
 }
 .block-info-text {
   color: #fff;
-  font-size: 36px;
+  font-size: 30px;
   float: left;
   width: 712px;
   -webkit-text-shadow: -2px -3px 3px rgba(0, 0, 0, 0.62);
@@ -448,6 +516,7 @@ a {
   position: absolute;
   bottom: 0;
   right: 0;
+  width: 50%;
 }
 .bonus-title {
   color: #191919;
@@ -459,6 +528,8 @@ a {
   display: inline-block;
   margin-top: 25px;
   padding-bottom: 90px;
+  position: relative;
+  z-index: 100;
 
   div {
     width: 426px;
@@ -509,9 +580,19 @@ a {
 .toyota-logo-img {
   background-image: url(../images/toyota-logo-img.jpg);
 }
-.hyundai-logo-label, .bmw-logo-label, .toyota-logo-label {
+.bmw-logo-label, .toyota-logo-label {
   margin: 205px auto;
   display: block;
+}
+.hyundai-logo-label {
+  margin: 205px 10% 205px auto;
+  display: block;
+  float: right;
+}
+.toyota-logo-label {
+    display: block;
+    float: left;
+    margin-left: 100px;
 }
 .hyundai-about-top, .bmw-about-top, .toyota-about-top {
   background-color: #fff;
@@ -594,32 +675,122 @@ a {
   width: 32%;
 }
 
-.hyundai-example {
+.hyundai-example, .toyota-example, .bmw-example {
   background: #fff;
   padding-top: 40px;
   padding-bottom: 60px;
 }
-.hyundai-example-left, .hyundai-example-right {
-  position: relative;
-  width: 50%;
+.toyota-example {
+  padding-bottom: 90px;
 }
-.hyundai-example-left {
+.bmw-example {
+  background-color: #ece8d9;
+  padding-bottom: 90px;
+}
+.hyundai-example {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fbfbfb+0,868686+100 */
+  background: #fbfbfb; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmJmYmZiIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzg2ODY4NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(-45deg,  #fbfbfb 0%, #868686 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#fbfbfb), color-stop(100%,#868686)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  #fbfbfb 0%,#868686 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg,  #fbfbfb 0%,#868686 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg,  #fbfbfb 0%,#868686 100%); /* IE10+ */
+  background: linear-gradient(135deg,  #fbfbfb 0%,#868686 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#868686',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+
+  border-bottom: 26px solid #dbdbda;
+}
+.handgif {
+  position: absolute;
+  bottom: -60px;
+  width: 50%;
+  left: 20px;
+}
+.hyundai-ex-list-percent {
+  float: right;
+  margin-top: 128px;
+
+  li {
+    width: 240px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .hyunday-percent-key {
+    color: #484747;
+    font-size: 24px;
+    float: left;
+    padding: 7px 0;
+  }
+  .hyundai-percent-val {
+    float: right;
+    font-size: 36px;
+    text-shadow: $textShadow;
+  }
+}
+.hpv-1 {
+  color: #60c89f;
+}
+.hpv-2 {
+  color: #5cb0b5;
+}
+.hpv-3 {
+  color: #527aa1;
+}
+.hpv-4 {
+  color: #f5bf67;
+}
+.hpv-5 {
+  color: #f07860;
+}
+.toyota-example {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e1e1e+0,6d6d6d+100 */
+  background: #1e1e1e; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMWUxZTFlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzZkNmQ2ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(-45deg,  #1e1e1e 0%, #6d6d6d 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#1e1e1e), color-stop(100%,#6d6d6d)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  #1e1e1e 0%,#6d6d6d 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg,  #1e1e1e 0%,#6d6d6d 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg,  #1e1e1e 0%,#6d6d6d 100%); /* IE10+ */
+  background: linear-gradient(135deg,  #1e1e1e 0%,#6d6d6d 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e1e1e', endColorstr='#6d6d6d',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+.hyundai-example-left, .hyundai-example-right,
+.bmw-example-left, .bmw-example-right,
+.toyota-example-left, .toyota-example-right {
+  position: relative;
+  width: 60%;
+}
+.hyundai-example-left, .bmw-example-left, .toyota-example-left {
   float: left;
 }
-.hyundai-example-right {
+.hyundai-example-right, .bmw-example-right, .toyota-example-right {
   float: right;
+  width: 40%;
   padding-left: 70px;
   text-align: center;
+
+  @include beforeCenter;
 
   .hyundai-example-title {
     text-align: center;
   }
 }
-.hyundai-example-title {
+.hyundai-example-title, .toyota-example-title, .bmw-example-title {
   color: #2a2a2a;
   font-size: 30px;
   text-transform: uppercase;
   text-align: center;
+}
+.toyota-example-title {
+  color: #fff;
+  margin-bottom: 70px;
+}
+.bmw-example-title {
+  color: #272727;
+  margin-bottom: 70px;
 }
 .hyundai-ex-1 {
   width: 100%;
@@ -635,7 +806,7 @@ a {
   display: inline-block;
 
   .people-pc-val {
-    color: #d882c7;
+    color: #c14040;
     font-size: 24px;
     font-weight: 700;
   }
@@ -653,7 +824,7 @@ a {
   margin-right: 30px;
 
   .people-pc-val {
-    color: #059fa9;
+    color: #496ec9;
   }
 }
 .people-title {
@@ -662,6 +833,53 @@ a {
   font-size: 24px;
   text-align: center;
   margin-top: 20px;
+}
+.toyota-example-right, .bmw-example-right {
+  .people-percent {
+    vertical-align: middle;
+  }
+  .people-title {
+    color: #fff;
+  }
+  .people-mans .people-pc-val {
+    color: #3faaee;
+  }
+  .people-womans .people-pc-val {
+    color: #e76767;
+  }
+}
+.bmw-example-right {
+  .people-percent {
+    vertical-align: middle;
+  }
+  .people-title {
+    color: #272727;
+  }
+}
+.toyota-example-left .toyota-product-percent,
+.bmw-example-left .bmw-product-percent {
+  margin: 13px 0;
+  float: left;
+  li {
+    width: 200px;
+  }
+  .product-another {
+    font-size: 18px;
+    margin: 11px 0;
+  }
+}
+.bmw-example-left .bmw-product-percent {
+  .product-another {
+    color: #666;
+    text-shadow: none;
+  }
+}
+.toyota-e-diagramm, .bmw-e-diagramm {
+  float: left;
+  margin-right: 68px;
+}
+.bmw-e-diagramm {
+  margin-top: -23px;
 }
 
 .hyundai-stats, .bmw-stats, .toyota-stats {
@@ -764,7 +982,7 @@ a {
   width: 100%;
 }
 
-.bmw-stats-title {
+.bmw-stats-title, .toyota-stats-title {
   text-shadow: $textShadow;
   color: #fff;
   font-size: 30px;
@@ -778,11 +996,58 @@ a {
 .bmw-stats-right {
   float: right;
   width: 30%;
+}
+.bmw-s-diagramm {
+  margin-top: 50px;
+  width: 100%;
+}
+.bmw-b-r-prod-list {
+  margin-top: 50px;
 
-  img {
-    float: right;
-    width: 91%;
+  li {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    overflow: hidden;
+
+    img {
+      padding-top: 6px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    };
   }
+
+  .bmw-prod-perc {
+    float: right;
+    font-size: 25px;
+  }
+  .bmw-prod-another {
+    text-transform: uppercase;
+    padding-top: 6px;
+    display: block;
+    float: left;
+  }
+}
+.bmw-mac-prod {
+  padding-top: 0;
+}
+.bpp-1 {
+  color: #5fc99d;
+}
+.bpp-2 {
+  color: #5cb0b5;
+}
+.bpp-3 {
+  color: #3998eb;
+}
+.bpp-4 {
+  color: #f5bf67;
+  line-height: 58px;
+}
+.bpp-5 {
+  color: #f07860;
 }
 .bmw-stats-text {
   margin-top: 50px;
@@ -809,6 +1074,264 @@ a {
   &:last-child {
     margin-right: 0;
   }
+}
+
+.toyota-stats-top {
+  margin-top: 60px;
+}
+.toyota-stats-screens-list {
+  float: left;
+
+  img {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.22);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.toyota-stats-top {
+  .toyota-stats-stripes {
+    float: right;
+  }
+
+  .stats-inf {
+    text-align: right;
+
+    .red-c, .yellow-c {
+      float: right;
+      margin-right: 0;
+      margin-left: 10px;
+    }
+  }
+}
+.toyota-stats-bottom {
+  margin-top: 35px;
+}
+.toyota-stats-list {
+  margin-top: 26px;
+
+  li {
+    overflow: hidden;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 7px;
+  }
+  li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}
+.toyota-stats-title {
+  text-shadow: $textShadow;
+  font-size: 24px;
+  color: #fff;
+}
+.toyota-stats-val {
+  float: right;
+}
+.toyota-stats-s-title {
+  line-height: 110px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.toyota-stat-by {
+  background: url(../images/bys-right.png) no-repeat center;
+  background-size: contain;
+  width: 280px;
+  padding: 18px 0 24px 40px;
+  text-align: left;  
+  margin-right: -6px;
+  margin-top: 49px;
+}
+.toyota-stat-sr {
+  background: url(../images/rss-right.png) no-repeat center;
+  background-size: contain;
+  width: 128px;
+  padding: 18px 0 24px 32px;
+  text-align: left;
+  margin-right: -4px;
+  margin-bottom: -12px;
+  float: right;
+}
+
+.toyota-stats-b-l {
+  float: left;
+}
+.toyota-b-l-devises {
+  overflow: hidden;
+}
+.toyota-stats-note {
+  background: url(../images/toyota-stats-note.png) no-repeat center;
+  background-size: contain;
+  line-height: 144px;
+  color: #fff;
+  font-size: 30px;
+  text-shadow: $textShadow;
+  float: left;
+  text-align: center;
+  width: 110px;
+  height: 144px;
+}
+.toyota-stats-phone {
+  float: left;  
+  margin-left: 20px;
+
+  img {
+    margin-top: 56px;
+  }
+}
+.stats-phone-percent {
+  color: #fff;
+  font-size: 30px;
+  text-shadow: $textShadow;
+  float: left;
+  padding: 112px 0 0 14px;
+}
+.toyota-stats-oss {
+  margin-top: 50px;
+}
+.toyota-stats-oss-item {
+  overflow: hidden;
+
+  span {
+    line-height: 62px;
+    float: left;
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: $textShadow;
+  }
+}
+.toyota-stats-oss {
+  .toyota-stats-oss-item {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.stats-os-img {
+  width: 62px;
+  height: 62px;
+  border: 2px solid #00f9ff;
+  background-color: #00537e;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  float: left;
+  border-radius: 50%;
+  position: relative;
+  z-index: 10;
+}
+.os-img-1 {
+  background-image: url(../images/toyota-stats-android.png);
+}
+.os-img-2 {
+  background-image: url(../images/toyota-stats-win.png);
+}
+.os-img-3 {
+  background-image: url(../images/toyota-stats-mac.png);
+}
+.stats-os-progress {
+  width: 164px;
+  height: 24px;
+  margin: 19px 0 0 -6px;
+  background-color: #fff;
+  box-shadow: 0 0 5px 1px #fff;
+  float: left;
+}
+.stats-progress-value {
+  height: 24px;
+  border: 1px solid #00f9ff;
+  border-right: 4px solid #14999C;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000b0c+0,007c7f+26,00f0f7+100 */
+  background: #000b0c; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMGIwYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI2JSIgc3RvcC1jb2xvcj0iIzAwN2M3ZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMGYwZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(left,  #000b0c 0%, #007c7f 26%, #00f0f7 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#000b0c), color-stop(26%,#007c7f), color-stop(100%,#00f0f7)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #000b0c 0%,#007c7f 26%,#00f0f7 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #000b0c 0%,#007c7f 26%,#00f0f7 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #000b0c 0%,#007c7f 26%,#00f0f7 100%); /* IE10+ */
+  background: linear-gradient(to right,  #000b0c 0%,#007c7f 26%,#00f0f7 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000b0c', endColorstr='#00f0f7',GradientType=1 ); /* IE6-8 */
+}
+.os-item-1 {
+  .stats-progress-value {
+    width: 72%;
+  }
+}
+.os-item-2 {
+  .stats-progress-value {
+    width: 20%;
+  }
+}
+.os-item-3 {
+  .stats-progress-value {
+    width: 8%;
+  }
+}
+
+.toyota-stats-b-r {
+  float: right;
+  overflow: hidden;
+  padding-top: 87px;
+}
+.toyota-product-percent, .bmw-product-percent {
+  float: right;
+  li {
+    width: 228px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    };
+  }
+  img {
+   float: left;
+   margin: 13px 0;
+  }
+  span {
+    float: right;
+    font-size: 36px;
+    text-shadow: $textShadow;
+  }
+  .product-another {
+    font-size: 24px;
+  }
+}
+.bmw-product-percent {
+  span {
+    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.53);
+  }
+}
+.product-another {
+  float: left !important;  
+  margin: 7px 0;
+}
+.ts-s {
+  color: #61c7a1;
+}
+.ts-n {
+  color: #5cb0b5;
+}
+.ts-l {
+  color: #4d87c0;
+}
+.ts-m {
+  color: #f5bf67;
+  line-height: 67px;
+}
+.ts-a {
+  color: #f07860;
+}
+.toyota-s-diagramm {
+  float: right;
+  margin-left: 80px;
 }
 
 /* === Contacts === */
