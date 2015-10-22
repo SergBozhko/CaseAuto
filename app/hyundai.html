@@ -2,20 +2,21 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>CaseAuto</title>
+    <title>BYYD • Кейс (автоиндустрия)</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/animate.css">
+    <script src="scripts/wow.min.js"></script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->    
+    <!-- build:css(.tmp) styles/main.css -->  
+    <link rel="stylesheet" href="styles/animate.css">  
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/media.css">
     <!-- endbuild -->
@@ -30,7 +31,7 @@
       <section class="header-content">
         <div class="logo">
           <a href="index.html"><img src="images/logo.png" height="72" width="160" class="logo-img" alt=""></a>
-          <h3 class="logo-title">РЕКЛАМНАЯ КОМПАНИЯ</h3>
+          <h3 class="logo-title">МОБИЛЬНАЯ РЕКЛАМНАЯ<hr> ПЛАТФОРМА</h3>
         </div>
         <nav id="main-nav">
           <ul class="nav-list">
@@ -42,17 +43,40 @@
         </nav>
       </section>      
     </header>
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-navigation-modal">
+      <ul class="mobile-modal-list">
+        <li><a href="about.html">о нас</a></li>
+        <li><a href="advantages.html">преимущества</a></li>
+        <li><a href="cases.html">кейсы</a></li>
+        <li><a href="contacts.html">контакты</a></li>
+      </ul>
+    </div>
+    <section class="main-menu-mobile">
+      <div class="mobile-menu-button">
+        <a href="#" id="mobile-menu-toggle">
+          <ul class="mobile-menu-lines">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </a>
+      </div>
+      <a href="index.html">
+        <img src="images/logo.png" class="mobile-logo-img" alt="">
+      </a>
+    </section>
     <section class="content-landing over-auto">
       <section class="block-wrap hyundai-logo-img">
         <div class="block-area clearfix">
-          <img src="images/huyndai-logo-label.png" class="hyundai-logo-label" alt="">
+          <img src="images/huyndai-logo-label.png" class="hyundai-logo-label wow fadeInLeft" alt="">
         </div>
       </section>
       <section class="block-wrap">
         <section class="block-wrap hyundai-about-top">
           <div class="block-area clearfix">
-            <div class="hyundai-about-title">описание</div>
-            <div class="hyundai-about-text">
+            <div class="hyundai-about-title wow fadeIn">описание</div>
+            <div class="hyundai-about-text wow fadeIn">
               <div class="hyundai-column-text">
                 <p>
                   <span>Задача</span>: продвижение автомобиля
@@ -80,13 +104,13 @@
         </section>
         <section class="block-wrap hyundai-about-bottom">
           <div class="block-area clearfix">
-            <div class="hyundai-about-text">
+            <div class="hyundai-about-text wow fadeIn">
               <p>
                 В ходе рекламной кампании нами был накоплен большой объём данных по целевой аудитории 
-                Hyundai Genesis, которые можно использовать в будущих кампаниях для мобильного ретаргетинга. 
+                Hyundai Genesis, который можно использовать в будущих кампаниях для мобильного ретаргетинга. 
               </p>
               <p>
-                Раздел с видео показал второй по популярности результат среди пользователей. Также, 
+                Раздел с видео показал второй по популярности результат среди пользователей. Кроме того, 
                 видеоролик показал высокую вовлеченность и глубину просмотра видео. 
               </p>
               <p>
@@ -96,51 +120,74 @@
             </div>
           </div>
         </section>
-        <img src="images/huyndai-phones.png" class="hyundai-phones" alt="">        
+        <img src="images/huyndai-phones.png" class="hyundai-phones wow fadeInDown" alt="">        
       </section>
       <section class="block-wrap hyundai-example">
         <div class="block-area clearfix">
-        <img src="images/handgif.gif" class="handgif" alt="">
-          <div class="hyundai-example-left">
-            <div class="hyundai-example-title">Пример раскрывающегося баннера</div>
-            <ul class="hyundai-ex-list-percent">
+        <img src="images/handgif.gif" class="handgif wow fadeInLeft" data-wow-delay="0.5s" alt="">          
+          <div class="hyundai-example-right">
+            <div class="hyundai-example-title wow fadeIn" data-wow-delay="0.5s">Аудитория</div>
+            <img src="images/hyundai-e-diagramm.png" class="hyundai-diagramma wow fadeInDown" alt="">
+            <ul class="hyundai-ex-list-percent mobile-hyundai-ex-list wow fadeIn">
               <li>
                 <span class="hyunday-percent-key">18-24</span>
-                <span class="hyundai-percent-val hpv-1">12,47%</span>
+                <span class="hyundai-percent-val hpv-1">3,36%</span>
               </li>
               <li>
                 <span class="hyunday-percent-key">25-34</span>
-                <span class="hyundai-percent-val hpv-2">31,98%</span>
+                <span class="hyundai-percent-val hpv-2">11,12%</span>
               </li>
               <li>
                 <span class="hyunday-percent-key">35-44</span>
-                <span class="hyundai-percent-val hpv-3">38,57%</span>
+                <span class="hyundai-percent-val hpv-3">12,47%</span>
               </li>
               <li>
                 <span class="hyunday-percent-key">45-54</span>
-                <span class="hyundai-percent-val hpv-4">11,12%</span>
+                <span class="hyundai-percent-val hpv-4">31,98%</span>
               </li>
               <li>
                 <span class="hyunday-percent-key">55-64</span>
-                <span class="hyundai-percent-val hpv-5">3,36%</span>
+                <span class="hyundai-percent-val hpv-5">38,57%</span>
               </li>
             </ul>
-          </div>
-          <div class="hyundai-example-right">
-            <div class="hyundai-example-title">Аудитория</div>
-            <img src="images/hyundai-e-diagramm.png" class="hyundai-diagramma" alt="">
             <div class="people-percent clearfix">
-              <div class="people-mans">
+              <div class="people-mans wow fadeInLeft" data-wow-delay="1s">
                 <img src="images/huyndai-man.png" alt="">
                 <div class="people-title">мужчины</div>
                 <div class="people-pc-val">78,73%</div>
               </div>
-              <div class="people-womans">
+              <div class="people-womans wow fadeInLeft" data-wow-delay="0.5s">
                 <img src="images/huyndai-woman.png" alt="">
                 <div class="people-title">женщины</div>
                 <div class="people-pc-val">21,27%</div>
               </div>
             </div>
+          </div>
+          <div class="hyundai-example-left">
+            <div class="hyundai-example-title wow fadeIn" data-wow-delay="0.5s">Пример раскрывающегося баннера</div>
+            <ul class="hyundai-ex-list-percent wow fadeIn">
+              <li>
+                <span class="hyunday-percent-key">18-24</span>
+                <span class="hyundai-percent-val hpv-1">3,36%</span>
+              </li>
+              <li>
+                <span class="hyunday-percent-key">25-34</span>
+                <span class="hyundai-percent-val hpv-2">11,12%</span>
+              </li>
+              <li>
+                <span class="hyunday-percent-key">35-44</span>
+                <span class="hyundai-percent-val hpv-3">12,47%</span>
+              </li>
+              <li>
+                <span class="hyunday-percent-key">45-54</span>
+                <span class="hyundai-percent-val hpv-4">31,98%</span>
+              </li>
+              <li>
+                <span class="hyunday-percent-key">55-64</span>
+                <span class="hyundai-percent-val hpv-5">38,57%</span>
+              </li>
+            </ul>
+            <img src="images/handgif.gif" class="handgif-mobile" alt="">
           </div>
         </div>     
       </section>
@@ -148,16 +195,16 @@
         <div class="block-area clearfix">
           <div class="stats-left">
             <div class="stats-inf">
-              <div class="stats-red-info clearfix">
+              <div class="stats-red-info clearfix wow fadeIn" data-wow-delay="0.5s">
                 <div class="red-c"></div>
                 Прогнозируемые результаты
               </div>
-              <div class="stats-yellow-info clearfix">
+              <div class="stats-yellow-info clearfix wow fadeIn" data-wow-delay="1s">
                 <div class="yellow-c"></div>
                 достигнутые результаты
               </div>
             </div>
-            <ul class="stats-list clearfix">
+            <ul class="stats-list clearfix wow fadeInLeft" data-wow-delay="1.5s">
               <li>
                 <div class="stats-val">
                   <div class="stat-sr">9 900 000</div>
@@ -202,8 +249,13 @@
               </li>
             </ul>
           </div>
-          <div class="stats-right">
-            <img src="images/huyndai-stat-screenshots.png" class="stats-screen" alt="">
+          <div class="stats-right wow fadeInDown" data-wow-delay="0.5s">
+            <img src="images/c-h-1.png" class="stats-screen" alt="">
+            <img src="images/c-h-2.png" class="stats-screen" alt="">
+            <img src="images/c-h-3.png" class="stats-screen" alt="">
+            <img src="images/c-h-4.png" class="stats-screen" alt="">
+            <img src="images/c-h-5.png" class="stats-screen" alt="">
+            <img src="images/c-h-6.png" class="stats-screen" alt="">
           </div>
         </div>     
       </section>                    
@@ -213,13 +265,14 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/wow/dist/wow.min.js"></script>   
     <!-- endbower -->
     <!-- endbuild -->
 
     
 
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js"></script>    
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -230,6 +283,9 @@
       e.src='https://www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+    <script>
+      new WOW().init();
     </script>
   </body>
 </html>

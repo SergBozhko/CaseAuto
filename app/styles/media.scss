@@ -9,7 +9,13 @@ only screen and (max-device-width: 1790px) {
 	}
 	
 }
-
+@media only screen and (max-width: 1660px),
+only screen and (max-device-width: 1660px) {
+	/* About */
+	.about-byyd-text {
+		width: 34%;
+	}
+}
 @media only screen and (max-width: 1620px),
 only screen and (max-device-width: 1620px) {
 	/* About */
@@ -26,13 +32,55 @@ only screen and (max-device-width: 1460px) {
 	.about-footer {
 		font-size: 17px;
 	}
+
+	/* Cases */
+	.stats-left {
+		float: none;
+		width: 100%;
+		padding: 0;
+	}
+	.stats-right {
+		float: none;
+		width: 100%;
+		margin-top: 40px;
+	}
+	.stats-screen {
+		width: 80%;
+		display: block;
+		margin: 0 auto;
+	}
 }
+
+@media only screen and (max-width: 1440px),
+only screen and (max-device-width: 1440px) {
+	/* Cases TOYOTA */
+	.toyota-stats-screens-list, .toyota-stats-top .toyota-stats-stripes {
+		float: none;
+		overflow: hidden;
+	}
+	.toyota-stats-top .toyota-stats-stripes {
+		margin-top: 40px;
+	}
+}
+
 @media only screen and (max-width: 1400px),
 only screen and (max-device-width: 1400px) {
 	/* About */
 	.about-byyd-text p span {
 		font-size: 80px;
 	}	
+}
+@media only screen and (max-width: 1366px),
+only screen and (max-device-width: 1366px) {
+	/* Cases */
+	.hyundai-about-top .hyundai-about-text,
+	.bmw-about-top .bmw-about-text,
+	.toyota-about-top .toyota-about-text {
+		width: 100%;
+	}
+	.about-byyd-text {
+		width: 38%;
+	}
 }
 @media only screen and (max-width: 1300px),
 only screen and (max-device-width: 1300px) {
@@ -45,23 +93,201 @@ only screen and (max-device-width: 1300px) {
 		font-size: 16px;
 	}
 }
+
+@media only screen and (max-width: 1260px),
+only screen and (max-device-width: 1260px) {
+	/* Case TOYOTA*/
+	.toyota-stats-bottom {
+		text-align: center;
+	}
+	.toyota-stats-b-l {
+		float: none;
+		display: inline-block;
+	}
+	.toyota-stats-b-r {
+		float: none;
+		padding-top: 0;
+		margin-top: 40px;
+	}
+	.toyota-s-diagramm {
+		float: none;
+		margin-left: 0;
+	}
+	.toyota-product-percent {
+		float: none;
+		display: inline-block;
+		margin-top: 40px;
+	}
+}
+
+@media only screen and (max-width: 1220px),
+only screen and (max-device-width: 1220px) {
+	/* Cases */
+	.hyundai-ex-list-percent {
+		display: none;
+	}
+	.mobile-hyundai-ex-list, .bmw-product-percent {
+	    display: block;
+	    margin: 0 auto;
+	    margin-top: 40px;
+	    float: none;
+	    width: 247px;
+	}
+	.hyundai-example {
+		padding-bottom: 0;
+	}
+	.hyundai-example-right, .hyundai-example-left {
+		float: none;
+		width: 100%;
+		padding: 0;
+	}
+	.hyundai-example-left {
+		margin-top: 60px;
+	}
+	.hyundai-diagramma, .bmw-e-diagramm {
+		margin: 40px auto;
+		max-width: 360px;
+		width: 100%;
+		display: block;
+	}
+	.people-percent {
+		margin: 20px 0 0 0;
+	}
+	.handgif {
+		display: none;
+	}
+	.handgif-mobile {
+		display: block;
+	    margin: 40px auto 0 auto;
+	    max-width: 90%;
+	}
+	.stats-screen {
+		width: 100%;
+	}
+	.bmw-example-left {
+		float: none;
+		width: 100%;
+	}
+	.bmw-e-diagramm {
+		float: none;
+	}
+	.bmw-example-title {
+		margin-bottom: 0;
+	}
+	.mobile-hyundai-ex-list, .bmw-example-left .bmw-product-percent {
+		float: none;
+		margin: 0 auto;
+	}
+	.bmw-example {
+		text-align: center;
+	}
+	.bmw-example-right {
+		float: none;
+		width: auto;
+		padding-left: 0; 
+		margin-top: 40px;
+		text-align: center;
+    	display: inline-block;
+	}
+	.toyota-example-left .toyota-product-percent li,
+	.bmw-example-left .bmw-product-percent li {
+		width: 240px;
+	}
+	.toyota-e-diagramm, .bmw-e-diagramm {
+		padding-right: 0;
+	}
+	.bmw-s-diagramm {
+		max-width: 420px;
+	}
+	.toyota-example-left .toyota-product-percent, .bmw-example-left .bmw-product-percent {
+		width: 240px;
+	}
+	.bmw-stats-left, .bmw-stats-right {
+		float: none;
+		width: 100%;
+	}
+	.bmw-stats-right {
+		text-align: center;
+		padding-left: 0;
+	}
+	.bmw-b-r-prod-list {
+		display: inline-block;
+
+		li {
+			width: 260px;
+
+			img {
+				float: left;
+			}
+		}
+	}
+
+	/* Case TOYOTA */
+	.toyota-e-diagramm {
+		float: none;
+		margin: 40px auto;
+	}
+	.toyota-example-left, .toyota-example-right {
+		float: none;
+		width: 100%;
+	}
+	.toyota-example-right {
+		padding-left: 0;
+	}
+	.toyota-example-left .toyota-product-percent {
+		float: none;
+		display: inline-block;
+		margin-bottom: 20px;
+	}
+	.toyota-e-mobilefix {
+		display: block;
+	}
+	.toyota-example {
+		text-align: center;
+	}
+	.toyota-example-title {
+		margin-bottom: 0; 
+	}
+}
 @media only screen and (max-width: 1190px),
 only screen and (max-device-width: 1190px) {
 	/* About */
 	.about-byyd-text p {
 		font-size: 15px;
-		padding-left: 40px;
 	}
 	.about-footer {
 		font-size: 15px;
+	}
+
+	/* Contacts */
+	.contacts-right-block, .contacts-left-block {
+		float: none;
+	}
+	.contacts-right-block {
+		margin-top: 40px;
+	}
+	.text-input {
+		width: 100%;
+	}
+	.contacts-map {
+		margin: 0 auto;
+	    margin-top: 40px;
+	    max-width: 100%;
+	    border-radius: 0;
+	    width: 100%;
+	    height: 340px;
+
+	    iframe {
+		    height: 332px;
+		    width: 100%;
+		    margin-top: 0;
+		    margin-left: 0;
+	    }
 	}
 }
 @media only screen and (max-width: 1100px),
 only screen and (max-device-width: 1100px) {
 	/* About */
-	.about-text {
-	    padding: 0 0 12px 0;
-	}
 	.about-main-byyd {
 		position: static;
 		margin: 20px auto 40px auto;
@@ -74,8 +300,11 @@ only screen and (max-device-width: 1100px) {
 		padding: 0 20px 0 60px;
 	}
 	.about-footer {
-		width: 100%;
+	    margin: 0 10%;
+	    margin-top: 12px;
+	    position: relative;
 		text-align: left;
+		width: auto;
 	}
 	.about-byyd-text p {
 		padding-left: 20px;
@@ -88,6 +317,21 @@ only screen and (max-device-width: 1100px) {
 	.block-info-text {
 		width: 70%;
 		font-size: 24px;
+	}
+
+	/* Cases */
+	.hyundai-phones, .bmw-phones, .toyota-phones {
+		display: none;
+	}
+	.hyundai-about-bottom .hyundai-about-text,
+	.bmw-about-bottom .bmw-about-text,
+	.toyota-about-bottom .toyota-about-text {
+		padding-right: 0;
+		width: 100%;
+		text-align: justify;
+	}
+	.hyundai-about-bottom, .bmw-about-bottom, .toyota-about-bottom {
+		padding: 20px 0;
 	}
 }
 
@@ -102,7 +346,10 @@ only screen and (max-device-width: 900px) {
 	}
 	.content, .content-landing {
 		width: 100%;
-		margin-left: 0;
+		margin-left: 0;		
+	}
+	.content {
+		padding: 80px 0 40px 0;
 	}
 
 	/* Advantages */
@@ -158,6 +405,12 @@ only screen and (max-device-width: 900px) {
 	.bonus-pink {
 		padding: 26px 40px;
 	}
+	.block-ours-adv {
+		padding-bottom: 30px;
+	}
+	.bonus-adv-shadow {
+	   margin-top: 30px;
+	}
 
 	/* Cases */
 	.content.cases-content {
@@ -168,13 +421,145 @@ only screen and (max-device-width: 900px) {
 		padding: 100px 0;
 		position: static;
 	}
+	.hyundai-logo-label, .toyota-logo-label, .bmw-logo-label {
+		margin: 205px auto;
+		float: none;
+	}
+	.hyundai-about-title, .bmw-about-title, .toyota-about-title {
+		font-size: 22px;
+	}
+	.hyundai-about-text, .bmw-about-text, .toyota-about-text {
+		margin: 20px 0;
+	}
+	.hyundai-column-text, .bmw-column-text, .toyota-column-text {
+		float: none;
+		width: auto;
+	}
+	.hyundai-about-top p, .bmw-about-top p, .toyota-about-top p {
+		font-size: 16px;
+	}
+	.hyundai-about-bottom .hyundai-about-text p,
+	.bmw-about-bottom .hyundai-about-text p,
+	.toyota-about-bottom .hyundai-about-text p {
+		font-size: 16px;
+	}
+	.hyundai-example-title, .toyota-example-title, .bmw-example-title {
+		font-size: 22px;
+	}
+	.hyundai-ex-list-percent .hyunday-percent-key {
+		font-size: 18px;
+		padding: 3px 0;
+	}
+	.hyundai-ex-list-percent .hyundai-percent-val {
+		font-size: 22px;
+	}
+	.mobile-hyundai-ex-list {
+		width: 200px;
+
+		li {
+			width: 200px;
+		}
+	}
+	.people-mans img, .people-womans img {
+		height: 70px;
+	}
+	.people-title {
+		font-size: 16px;
+	}
+	.people-percent .people-pc-val {
+		font-size: 18px;
+	}
+	.stats-red-info, .stats-yellow-info {
+		font-size: 13px;
+	}
+	.stat-sr {
+		width: 125px;
+	}
+	.stat-by {
+    	width: 290px;
+	}
+	.toyota-example-left .toyota-product-percent .product-another, .bmw-example-left .bmw-product-percent .product-another {
+		font-size: 18px;
+		margin: 3px 0;
+	}
+	.toyota-example-left .toyota-product-percent, .bmw-example-left .bmw-product-percent {
+		width: 200px;
+	}
+	.toyota-example-left .toyota-product-percent li, .bmw-example-left .bmw-product-percent li {
+		width: 200px;
+	}
+	.bmw-product-percent span, .toyota-product-percent span {
+		font-size: 22px;
+	}
+	.ts-m {
+		line-height: normal;
+	}
+	.bmw-stats-title, .toyota-stats-title {
+		font-size: 22px;
+	}
+	.bmw-stats-text {
+		margin-top: 40px;
+	}
+	.bmw-stats-text p {
+		font-size: 16px;
+	}
+	.bmw-stats-left-img {
+		width: 100%;
+	}
+
+	/* Case TOYOTA */
+	.toyota-product-percent {
+		margin-top: 0;
+	}
+	.toyota-stats-top {
+		margin-top: 40px;
+	}
+	.hyundai-stats, .bmw-stats, .toyota-stats {
+		padding: 40px 0;
+	}
+	.toyota-s-diagramm {
+		width: 70%;
+		margin-bottom: 40px;
+	    max-width: 420px;
+	}
+	.toyota-product-percent img {
+		margin: 0;
+	}
+	.toyota-product-percent {
+		.product-another {
+			margin: 0;
+		}
+		.ts-m {
+		   line-height: 41px;
+		}
+		.ts-a {
+			line-height: 28px;
+		}
+	}
+
+	/* Contacts */
+	.bgvideo {
+		display: none;
+	}
+	.contacts-bg {
+		background: url(../images/video-mask.png) repeat center, url(../images/contacts-bg.jpg) no-repeat center;
+  		background-size: cover;
+	}
+	.contacts-title {
+		font-size: 20px;
+		margin-bottom: 40px;
+		text-align: justify;
+	}
+	.contacts-bg {
+		height: auto;
+		padding: 40px 0 0 0;
+	}
+
 }
 
 @media only screen and (max-width: 736px),
 only screen and (max-device-width: 736px) {
-	.content {
-	    padding: 14% 0 40px 0;
-	}
+
 }
 
 @media only screen and (max-width: 508px),
@@ -182,6 +567,72 @@ only screen and (max-device-width: 508px) {
 	.about-byyd-text p span {
 		font-size: 52px;
 		left: -28px;
+	}
+	.stats-right {
+		img {
+			width: 49%;
+			margin-bottom: 5px;
+
+			&:nth-child(even) {
+				margin-right: 0;
+			};
+		}
+	}
+	.bmw-screens {
+		width: 49%;
+		margin-bottom: 5px;
+
+		&:nth-child(even) {
+			margin-right: 0;
+		};
+	}
+	.toyota-stats-screens-list img {
+		width: 49%;
+		margin-bottom: 5px;
+
+		&:nth-child(even) {
+			margin-right: 0;
+		};
+	}
+	.stats-os-progress {
+		width: 140px;
+	}
+	.toyota-stats-s-title {
+		line-height: 0;
+	}
+	.toyota-stats-val {
+		float: none;
+		overflow: hidden;
+	}
+	.toyota-stat-by {
+		float: right;
+		margin-top: 0;
+	}
+	.toyota-stats-list li {
+		padding-bottom: 18px;
+	}
+}
+
+@media only screen and (max-width: 464px),
+only screen and (max-device-width: 464px) {
+	/* Cases */
+	.stats-val {
+		float: none;
+	}
+	.stats-title {
+		line-height: 0;
+		font-size: 18px;
+	}
+	.stats-list li {
+		padding-bottom: 18px;
+	}	
+}
+
+@media only screen and (max-width: 414px),
+only screen and (max-device-width: 414px) {
+	.c-m-fixer {
+		line-height: 20px;
+		display: block;
 	}
 }
 

@@ -2,20 +2,21 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>CaseAuto</title>
+    <title>BYYD • Кейс (автоиндустрия)</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/animate.css">
+    <script src="scripts/wow.min.js"></script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->    
+    <!-- build:css(.tmp) styles/main.css -->  
+    <link rel="stylesheet" href="styles/animate.css">  
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/media.css">
     <!-- endbuild -->
@@ -30,7 +31,7 @@
       <section class="header-content">
         <div class="logo">
           <a href="index.html"><img src="images/logo.png" height="72" width="160" class="logo-img" alt=""></a>
-          <h3 class="logo-title">РЕКЛАМНАЯ КОМПАНИЯ</h3>
+          <h3 class="logo-title">МОБИЛЬНАЯ РЕКЛАМНАЯ<hr> ПЛАТФОРМА</h3>
         </div>
         <nav id="main-nav">
           <ul class="nav-list">
@@ -42,17 +43,40 @@
         </nav>
       </section>      
     </header>
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-navigation-modal">
+      <ul class="mobile-modal-list">
+        <li><a href="about.html">о нас</a></li>
+        <li><a href="advantages.html">преимущества</a></li>
+        <li><a href="cases.html">кейсы</a></li>
+        <li><a href="contacts.html">контакты</a></li>
+      </ul>
+    </div>
+    <section class="main-menu-mobile">
+      <div class="mobile-menu-button">
+        <a href="#" id="mobile-menu-toggle">
+          <ul class="mobile-menu-lines">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </a>
+      </div>
+      <a href="index.html">
+        <img src="images/logo.png" class="mobile-logo-img" alt="">
+      </a>
+    </section>
     <section class="content-landing over-auto">
       <section class="block-wrap bmw-logo-img">
         <div class="block-area clearfix">
-          <img src="images/bmw-logo-label.png" class="bmw-logo-label" alt="">
+          <img src="images/bmw-logo-label.png" class="bmw-logo-label wow fadeIn" alt="">
         </div>
       </section>
       <section class="block-wrap">
         <section class="block-wrap bmw-about-top">
           <div class="block-area clearfix">
-            <div class="bmw-about-title">описание</div>
-            <div class="bmw-about-text">
+            <div class="bmw-about-title wow fadeIn">описание</div>
+            <div class="bmw-about-text wow fadeIn">
               <div class="bmw-column-text">
                 <p>
                   <span>Задача</span>: анонс специальных
@@ -68,8 +92,7 @@
               <div class="bmw-column-text">
                 <p>
                   <span>Инструменты</span>: баннерная реклама
-                  с таргетингом по интересам. Post-
-                  -back оптимизация по вовлеченности
+                  с таргетингом по интересам. Postback оптимизация по вовлеченности
                   пользователей на сайте. Оптимизация
                   по источникам конверсий.
                 </p>
@@ -79,7 +102,7 @@
         </section>
         <section class="block-wrap bmw-about-bottom">
           <div class="block-area clearfix">
-            <div class="bmw-about-text">
+            <div class="bmw-about-text wow fadeIn">
               <p>
                 Для клиента был разработан лендинг для анонсирования специальных 
                 предложений на автомобили BMW. 
@@ -90,36 +113,36 @@
               </p>
               <p>
                 В ходе кампании отбирались источники, приносящие наибольшее количество конверсий и 
-                выгружались в отдельные кампании. Попутно, отключались приложения с высоким CTR, но 
+                выгружались в отдельные кампании. Попутно отключались приложения с высоким CTR, но 
                 с низким показателем конверсии. В результате чего удалось добиться многократного 
                 увеличения CR.
               </p>
             </div>
           </div>
         </section>
-        <img src="images/bmw-phones.png" class="bmw-phones" alt="">        
+        <img src="images/bmw-phones.png" class="bmw-phones wow fadeInDown" alt="">        
       </section>
       <section class="block-wrap bmw-example">
         <div class="block-area clearfix">
-        <div class="bmw-example-title">Аудитория</div>
+        <div class="bmw-example-title wow fadeIn">Аудитория</div>
           <div class="bmw-example-left">
-          <img src="images/bmw-e-diagramm.png" alt="" class="bmw-e-diagramm">
-            <ul class="bmw-product-percent">
-                <li><span class="product-another">18-24</span><span class="ts-s">18%</span></li>
-                <li><span class="product-another">25-34</span><span class="ts-n">64%</span></li>
+          <img src="images/bmw-e-diagramm.png" alt="" class="bmw-e-diagramm wow fadeInDown" data-wow-delay="0.5s">
+            <ul class="bmw-product-percent wow fadeIn">
+                <li><span class="product-another">18-24</span><span class="ts-s">3%</span></li>
+                <li><span class="product-another">25-34</span><span class="ts-n">6%</span></li>
                 <li><span class="product-another">35-44</span><span class="ts-l">9%</span></li>
-                <li><span class="product-another">45-54</span><span class="ts-m">6%</span></li>
-                <li><span class="product-another">55-64</span><span class="ts-a">3%</span></li>
+                <li><span class="product-another">45-54</span><span class="ts-m">18%</span></li>
+                <li><span class="product-another">55-64</span><span class="ts-a">64%</span></li>
               </ul>
           </div>
           <div class="bmw-example-right">
             <div class="people-percent clearfix">
-              <div class="people-mans">
+              <div class="people-mans wow fadeInLeft" data-wow-delay="1s">
                 <img src="images/toyota-man.png" alt="">
                 <div class="people-title">мужчины</div>
                 <div class="people-pc-val">73%</div>
               </div>
-              <div class="people-womans">
+              <div class="people-womans wow fadeInLeft" data-wow-delay="0.5s">
                 <img src="images/toyota-woman.png" alt="">
                 <div class="people-title">женщины</div>
                 <div class="people-pc-val">27%</div>
@@ -130,14 +153,14 @@
       </section>
       <section class="block-wrap bmw-stats">
         <div class="block-area clearfix">
-          <div class="bmw-stats-title">Результаты</div>
+          <div class="bmw-stats-title wow fadeIn">Результаты</div>
           <div class="bmw-stats-left">
             <div class="bmw-stats-text">
-              <p>СR в начале кампании 0,25%</p>
-              <p>СR в конце кампании 1,57%</p>
+              <p class="wow fadeInDown" data-wow-delay="0.5s">СR в начале кампании 0,25%</p>
+              <p class="wow fadeInDown" data-wow-delay="1s">СR в конце кампании 1,57%</p>
             </div>
-            <img src="images/bmw-stats-left.jpg" class="bmw-stats-left-img" alt="">
-            <div class="bmw-stats-left-screens clearfix">
+            <img src="images/bmw-stats-left.jpg" class="bmw-stats-left-img wow fadeIn" data-wow-delay="0.5s" alt="">
+            <div class="bmw-stats-left-screens clearfix wow fadeIn" data-wow-delay="0.5s">
               <img src="images/bmw-screen-1.png" alt="" class="bmw-screens">
               <img src="images/bmw-screen-2.png" alt="" class="bmw-screens">
               <img src="images/bmw-screen-3.png" alt="" class="bmw-screens">
@@ -145,23 +168,24 @@
             </div>
           </div>
           <div class="bmw-stats-right">
-            <img src="images/bmw-s-diagramm.png" class="bmw-s-diagramm" alt="">
-            <ul class="bmw-b-r-prod-list">
+            <img src="images/bmw-s-diagramm.png" class="bmw-s-diagramm wow fadeIn" data-wow-delay="0.5s" alt="">
+            <div></div>
+            <ul class="bmw-b-r-prod-list wow fadeIn" data-wow-delay="0.5s">
               <li>
                 <img src="images/toyota-stats-samsung.png" alt="">
-                <span class="bmw-prod-perc bpp-1">27%</spnan>
+                <span class="bmw-prod-perc bpp-1">7%</spnan>
               </li>
               <li>
                 <img src="images/toyota-stats-nokia.png" alt="">
-                <span class="bmw-prod-perc bpp-2">11%</spnan>
+                <span class="bmw-prod-perc bpp-2">8%</spnan>
               </li>
               <li>
                 <img src="images/toyota-stats-lenovo.png" alt="">
-                <span class="bmw-prod-perc bpp-3">8%</spnan>
+                <span class="bmw-prod-perc bpp-3">11%</spnan>
               </li>
               <li>
                 <img src="images/toyota-stats-mac.png" class="bmw-mac-prod" alt="">
-                <span class="bmw-prod-perc bpp-4">7%</spnan>
+                <span class="bmw-prod-perc bpp-4">27%</spnan>
               </li>
               <li>
                 <span class="bmw-prod-another">прочие</span>
@@ -177,13 +201,14 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/wow/dist/wow.min.js"></script>    
     <!-- endbower -->
     <!-- endbuild -->
 
     
 
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js"></script>    
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -194,6 +219,9 @@
       e.src='https://www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>    
+    <script>
+      new WOW().init();
     </script>
   </body>
 </html>

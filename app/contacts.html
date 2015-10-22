@@ -2,12 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>CaseAuto</title>
+    <title>BYYD • Кейс (автоиндустрия)</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -30,7 +28,7 @@
       <section class="header-content">
         <div class="logo">
           <a href="index.html"><img src="images/logo.png" height="72" width="160" class="logo-img" alt=""></a>
-          <h3 class="logo-title">РЕКЛАМНАЯ КОМПАНИЯ</h3>
+          <h3 class="logo-title">МОБИЛЬНАЯ РЕКЛАМНАЯ<hr> ПЛАТФОРМА</h3>
           <div class="logo-home-icon">
             <img src="images/icon-contacts.png" alt="">
           </div>
@@ -45,21 +43,50 @@
         </nav>
       </section>      
     </header>
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-navigation-modal">
+      <ul class="mobile-modal-list">
+        <li><a href="about.html">о нас</a></li>
+        <li><a href="advantages.html">преимущества</a></li>
+        <li><a href="cases.html">кейсы</a></li>
+        <li><a href="contacts.html">контакты</a></li>
+      </ul>
+    </div>
+    <section class="main-menu-mobile">
+      <div class="mobile-menu-button">
+        <a href="#" id="mobile-menu-toggle">
+          <ul class="mobile-menu-lines">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </a>
+      </div>
+      <a href="index.html">
+        <img src="images/logo.png" class="mobile-logo-img" alt="">
+      </a>
+    </section>
     <section class="content contacts-bg">      
       <div class="contacts-content">
       <div class="contacts-title">
         Мы будем рады обсудить ваши потребности и ответить на любые вопросы.
         Позвоните нам или заполните простую форму контактов.
       </div>
+      
+      <video autoplay loop muted class="bgvideo">
+        <source src="images/NYC-Traffic.mp4" type="video/mp4"></source>
+      </video>
+      <div class="video-mask"></div>
+
         <div class="contacts-left-block">
           <ul class="contacts-list">
-            <li><div class="contacts-img-wrap ciw-1"></div>г. Москва, ул. Бакунинская 69, оф. 1</li>
+            <li><div class="contacts-img-wrap ciw-1"></div><span class="c-m-fixer">г. Москва, ул. Бакунинская 69, оф. 1</span></li>
             <li><div class="contacts-img-wrap ciw-2"></div>+7 (495) 133-58-72</li>
             <li><div class="contacts-img-wrap ciw-3"></div>hello@byyd.me</li>
-            <li><div class="contacts-img-wrap ciw-4"></div>byyd.me</li>
+            <li><div class="contacts-img-wrap ciw-4"></div>byyd.me/ru</li>
           </ul>
           <div class="contacts-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.825124730699!2d37.68842131610455!3d55.77890899744551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b5357a3c058987%3A0xbe6b05b0457be6b4!2z0JHQsNC60YPQvdC40L3RgdC60LDRjyDRg9C7LiwgNjnRgTEsINCc0L7RgdC60LLQsCwgMTA1MDgy!5e0!3m2!1sru!2sru!4v1444913124818" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.825124730699!2d37.68842131610455!3d55.77890899744551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b5357a3c058987%3A0xbe6b05b0457be6b4!2z0JHQsNC60YPQvdC40L3RgdC60LDRjyDRg9C7LiwgNjnRgTEsINCc0L7RgdC60LLQsCwgMTA1MDgy!5e0!3m2!1sru!2sru!4v1444913124818" allowfullscreen frameborder="0"></iframe>
           </div>          
         </div>
         <div class="contacts-right-block">
@@ -74,11 +101,15 @@
                 <input type="text" required class="text-input" id="contacts-company">
               </div>
               <div class="contacts-form-row">
+                <label>телефон*</label>
+                <input type="text" required class="text-input" id="contacts-phone">
+              </div>
+              <div class="contacts-form-row">
                 <label>e-mail*</label>
                 <input type="email" required class="text-input" id="contacts-mail">
               </div>
               <div class="contacts-form-row">
-                <label>сообщение*</label>
+                <label>сообщение</label>
                 <textarea name="" class="text-input" id="contacts-mess" cols="30" rows="10"></textarea>
               </div>              
               <input type="submit" value="отправить" class="text-submit">

@@ -2,13 +2,12 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>CaseAuto</title>
+    <title>BYYD • Кейс (автоиндустрия)</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="viewport" con
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/animate.css">
+    <script src="scripts/wow.min.js"></script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css(.) styles/vendor.css -->
@@ -16,6 +15,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->    
+    <link rel="stylesheet" href="styles/animate.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/media.css">
     <!-- endbuild -->
@@ -30,7 +30,7 @@
       <section class="header-content">
         <div class="logo">
           <a href="index.html"><img src="images/logo.png" height="72" width="160" class="logo-img" alt=""></a>
-          <h3 class="logo-title">РЕКЛАМНАЯ КОМПАНИЯ</h3>
+          <h3 class="logo-title">МОБИЛЬНАЯ РЕКЛАМНАЯ<hr> ПЛАТФОРМА</h3>
         </div>
         <nav id="main-nav">
           <ul class="nav-list">
@@ -42,17 +42,40 @@
         </nav>
       </section>      
     </header>
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-navigation-modal">
+      <ul class="mobile-modal-list">
+        <li><a href="about.html">о нас</a></li>
+        <li><a href="advantages.html">преимущества</a></li>
+        <li><a href="cases.html">кейсы</a></li>
+        <li><a href="contacts.html">контакты</a></li>
+      </ul>
+    </div>
+    <section class="main-menu-mobile">
+      <div class="mobile-menu-button">
+        <a href="#" id="mobile-menu-toggle">
+          <ul class="mobile-menu-lines">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </a>
+      </div>
+      <a href="index.html">
+        <img src="images/logo.png" class="mobile-logo-img" alt="">
+      </a>
+    </section>
     <section class="content-landing over-auto">
       <section class="block-wrap toyota-logo-img">
         <div class="block-area clearfix">
-          <img src="images/toyota-logo-label.png" class="toyota-logo-label" alt="">
+          <img src="images/toyota-logo-label.png" class="toyota-logo-label wow fadeInLeft" alt="">
         </div>
       </section>
       <section class="block-wrap">
         <section class="block-wrap toyota-about-top">
           <div class="block-area clearfix">
-            <div class="toyota-about-title">описание</div>
-            <div class="toyota-about-text">
+            <div class="toyota-about-title wow fadeIn">описание</div>
+            <div class="toyota-about-text wow fadeIn">
               <div class="toyota-column-text">
                 <p>
                   <span>Задача</span>: анонсирование выхода
@@ -77,10 +100,10 @@
         </section>
         <section class="block-wrap toyota-about-bottom">
           <div class="block-area clearfix">
-            <div class="toyota-about-text">
+            <div class="toyota-about-text wow fadeIn">
               <p>
                 В ходе рекламной кампании нами был накоплен большой объём данных по целевой аудитории 
-                Hyundai Genesis, которые можно использовать в будущих кампаниях для мобильного ретаргетинга. 
+                Hyundai Genesis, который можно использовать в будущих кампаниях для мобильного ретаргетинга. 
               </p>
               <p>
                 Раздел с видео показал второй по популярности результат среди пользователей. 
@@ -92,29 +115,30 @@
             </div>
           </div>
         </section>
-        <img src="images/toyota-phones.png" class="toyota-phones" alt="">        
+        <img src="images/toyota-phones.png" class="toyota-phones wow fadeInDown" alt="">        
       </section>
       <section class="block-wrap toyota-example">
         <div class="block-area clearfix">
-        <div class="toyota-example-title">Аудитория</div>
+        <div class="toyota-example-title wow fadeIn">Аудитория</div>
           <div class="toyota-example-left">
-          <img src="images/toyota-e-diagramm.png" alt="" class="toyota-e-diagramm">
-            <ul class="toyota-product-percent">
-                <li><span class="product-another">18-24</span><span class="ts-s">19%</span></li>
-                <li><span class="product-another">25-34</span><span class="ts-n">59%</span></li>
+          <img src="images/toyota-e-diagramm.png" alt="" class="toyota-e-diagramm wow fadeInDown" data-wow-delay="0.5s">
+          <div class="toyota-e-mobilefix"></div>
+            <ul class="toyota-product-percent wow fadeIn">
+                <li><span class="product-another">18-24</span><span class="ts-s">4%</span></li>
+                <li><span class="product-another">25-34</span><span class="ts-n">5%</span></li>
                 <li><span class="product-another">35-44</span><span class="ts-l">13%</span></li>
-                <li><span class="product-another">45-54</span><span class="ts-m">5%</span></li>
-                <li><span class="product-another">55-64</span><span class="ts-a">4%</span></li>
+                <li><span class="product-another">45-54</span><span class="ts-m">19%</span></li>
+                <li><span class="product-another">55-64</span><span class="ts-a">59%</span></li>
               </ul>
           </div>
           <div class="toyota-example-right">
             <div class="people-percent clearfix">
-              <div class="people-mans">
+              <div class="people-mans wow fadeInLeft" data-wow-delay="1s">
                 <img src="images/toyota-man.png" alt="">
                 <div class="people-title">мужчины</div>
                 <div class="people-pc-val">73%</div>
               </div>
-              <div class="people-womans">
+              <div class="people-womans wow fadeInLeft" data-wow-delay="0.5s">
                 <img src="images/toyota-woman.png" alt="">
                 <div class="people-title">женщины</div>
                 <div class="people-pc-val">27%</div>
@@ -125,9 +149,9 @@
       </section>
       <section class="block-wrap toyota-stats">
         <div class="block-area clearfix">
-          <div class="toyota-stats-title">Результаты</div>
+          <div class="toyota-stats-title wow fadeIn">Результаты</div>
           <div class="toyota-stats-top clearfix">
-            <div class="toyota-stats-screens-list">
+            <div class="toyota-stats-screens-list wow fadeInDown" data-wow-delay="0.5s">
               <img src="images/toyota-screen-1.png" alt="">
               <img src="images/toyota-screen-2.png" alt="">
               <img src="images/toyota-screen-3.png" alt="">
@@ -135,27 +159,29 @@
             </div>
             <div class="toyota-stats-stripes">
               <div class="stats-inf">
-                <div class="stats-red-info clearfix">
+                <div class="stats-red-info clearfix wow fadeIn" data-wow-delay="0.5s">
                   <div class="red-c"></div>
                   Прогнозируемые результаты
                 </div>
-                <div class="stats-yellow-info clearfix">
+                <div class="stats-yellow-info clearfix wow fadeIn" data-wow-delay="1s">
                   <div class="yellow-c"></div>
                   достигнутые результаты
                 </div>
               </div>
-              <ul class="toyota-stats-list clearfix">
+              <ul class="toyota-stats-list clearfix wow fadeIn" data-wow-delay="1.5s">
               <li>
                 <div class="toyota-stats-val">
                   <div class="toyota-stat-sr">27 000</div>
-                  <div class="toyota-stat-by">41145</div>                  
+                  <div class="toyota-e-mobilefix"></div>
+                  <div class="toyota-stat-by">41145</div>             
                 </div>
                 <div class="toyota-stats-s-title">клики</div>
               </li>
               <li>
                 <div class="toyota-stats-val">
                   <div class="toyota-stat-sr">0,6%</div>
-                  <div class="toyota-stat-by">1,03%</div>                  
+                  <div class="toyota-e-mobilefix"></div>
+                  <div class="toyota-stat-by">1,03%</div>             
                 </div>
                 <div class="toyota-stats-s-title">CTR</div>
               </li>
@@ -164,29 +190,29 @@
           </div>
           <div class="toyota-stats-bottom clearfix">
             <div class="toyota-stats-b-l">
-              <div class="toyota-b-l-devises">
+              <div class="toyota-b-l-devises wow fadeIn">
                 <div class="toyota-stats-note">13%</div>
                 <div class="toyota-stats-phone">
-                  <img src="images/toyota-stats-phone.png" alt="">                  
+                  <img src="images/toyota-stats-phone.png" alt="">
                 </div>
                 <div class="stats-phone-percent">87%</div>
               </div>
               <div class="toyota-stats-oss">
-                <div class="toyota-stats-oss-item os-item-1">
+                <div class="toyota-stats-oss-item os-item-1 wow fadeInLeft" data-wow-delay="0.5s">
                   <div class="stats-os-img os-img-1"></div>
                   <div class="stats-os-progress">
                     <div class="stats-progress-value"></div>
                   </div>
                   <span>72%</span>
                 </div>
-                <div class="toyota-stats-oss-item os-item-2">
+                <div class="toyota-stats-oss-item os-item-2 wow fadeInLeft" data-wow-delay="1s">
                   <div class="stats-os-img os-img-2"></div>
                   <div class="stats-os-progress">
                     <div class="stats-progress-value"></div>
                   </div>
                   <span>20%</span>
                 </div>
-                <div class="toyota-stats-oss-item os-item-3">
+                <div class="toyota-stats-oss-item os-item-3 wow fadeInLeft" data-wow-delay="1.5s">
                   <div class="stats-os-img os-img-3"></div>
                   <div class="stats-os-progress">
                     <div class="stats-progress-value"></div>
@@ -196,12 +222,13 @@
               </div>
             </div>
             <div class="toyota-stats-b-r">
-            <img src="images/toyota-s-diagramm.png" alt="" class="toyota-s-diagramm">
-              <ul class="toyota-product-percent">
-                <li><img src="images/toyota-stats-samsung.png" alt=""><span class="ts-s">28%</span></li>
-                <li><img src="images/toyota-stats-nokia.png" alt=""><span class="ts-n">17%</span></li>
-                <li><img src="images/toyota-stats-lenovo.png" alt=""><span class="ts-l">8%</span></li>
-                <li><img src="images/toyota-stats-mac.png" alt=""><span class="ts-m">8%</span></li>
+            <img src="images/toyota-s-diagramm.png" alt="" class="toyota-s-diagramm wow fadeIn" data-wow-delay="0.5s">
+            <div class="toyota-e-mobilefix"></div>
+              <ul class="toyota-product-percent wow fadeIn">
+                <li><img src="images/toyota-stats-samsung.png" alt=""><span class="ts-s">8%</span></li>
+                <li><img src="images/toyota-stats-nokia.png" alt=""><span class="ts-n">8%</span></li>
+                <li><img src="images/toyota-stats-lenovo.png" alt=""><span class="ts-l">17%</span></li>
+                <li><img src="images/toyota-stats-mac.png" alt=""><span class="ts-m">28%</span></li>
                 <li><span class="product-another">прочие</span><span class="ts-a">39%</span></li>
               </ul>              
             </div>
@@ -214,13 +241,14 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/wow/dist/wow.min.js"></script>    
     <!-- endbower -->
     <!-- endbuild -->
 
     
 
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js"></script>    
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -231,6 +259,9 @@
       e.src='https://www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+    <script>
+      new WOW().init();
     </script>
   </body>
 </html>
