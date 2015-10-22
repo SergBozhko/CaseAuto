@@ -540,7 +540,7 @@ a {
   max-width: 90%;
 }
 .block-info-adv {
-  background: url(../images/infoblock.jpg) no-repeat center;
+  background: url(../images/video-mask.png) repeat center, url(../images/infoblock.jpg) no-repeat center;
   background-size: cover;
   background-attachment: fixed;
   padding: 190px 0 320px 0;
@@ -550,8 +550,7 @@ a {
   font-size: 30px;
   float: left;
   width: 712px;
-  -webkit-text-shadow: -2px -3px 3px rgba(0, 0, 0, 0.62);
-   text-shadow: -2px -3px 3px rgba(0, 0, 0, 0.62); 
+   text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.62);
 }
 .block-bonus {
   padding: 70px 0 20px 0;
